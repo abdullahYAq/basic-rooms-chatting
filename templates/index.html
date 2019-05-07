@@ -1,0 +1,42 @@
+{% extends "template.html" %}
+
+{% block head %}
+	<title>Link-Us Now</title>
+	<style>
+		#add_new_user{
+			text-align: center;
+		}
+		.name_field{
+			width: 400px;
+		}
+	</style>
+	<script type="text/javascript" src="{{ url_for('static', filename='index.js') }}"></script>
+{% endblock %}
+{% block body %}
+	
+	<div id="add_username">
+		<form id="add_new_user" method="post">
+			<label id="user_name">inter your name</label>
+			<input id="usernm" class ="name_field" type="text" name="name" placeholder="please user name your name here."><br><br>
+			<input type="submit">
+		</form>
+	</div>
+	<br><br>
+	<div id="hello">
+		
+	</div>
+	<br><br>
+	<div id="rooms">
+		<form method="post" action="{{ url_for('index') }}">
+			<input type="text" name="room" placeholder="room name">
+			<input type="submit" name="add_room" value="Add New Room">
+		</form>
+		<br><br>
+		{% for room in channels %}
+			<ul>
+				<li><a href="{{ url_for('rooms', roomname = room) }}">{{ room }}</a></li>
+			</ul>
+		{% endfor %}
+	</div>	
+
+{% endblock %}

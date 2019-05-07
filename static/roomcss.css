@@ -1,0 +1,11 @@
+#msg_body{
+	width: 500px;
+	height: 200px;
+	background-color: #d2d7dd;
+	overflow-y: auto;
+	
+}
+#msg{
+	text-align: center;
+	margin: 10px;
+}

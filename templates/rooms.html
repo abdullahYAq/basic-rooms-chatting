@@ -1,0 +1,22 @@
+{% extends "template.html" %}
+
+{% block head %}
+	
+	<title>chat for {{ roomname }} || link us now</title>
+	<link rel="stylesheet" type="text/css" href="{{url_for('static', filename='roomcss.css')}}">
+	<script type="text/javascript" src="{{ url_for('static', filename='roomjs.js') }}"></script>
+	
+{% endblock %}
+{% block body %}
+	<h3 id="rmnm">{{ roomname }}</h3><br><br>
+	<div id="msg"> 
+		<div id="msg_body">
+			<ul id="msg_lst">
+				
+			</ul>
+		</div>
+		<br><br>
+		<input id="msg_fld" type="text" name="message"><br>
+		<button id="send_msg">Send</button>		
+	</div>
+{% endblock %}
